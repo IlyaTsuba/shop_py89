@@ -19,6 +19,7 @@ class CustomUserManager(BaseUserManager):
             phone_number=phone_number,
             **extra_fields
         )
+
         user.set_password(password)
         user.save()
         return user
