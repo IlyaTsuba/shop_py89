@@ -8,9 +8,9 @@ from rest_framework.permissions import IsAuthenticated
 class SomeView(APIView):
     permission_classes = (IsAuthenticated, )
 
-
     def get(self, request):
         return Response("DAROVA")
+
 
 class ActivateUser(UserViewSet):
     def get_serializer(self, *args, **kwargs):
