@@ -5,21 +5,15 @@ from django.contrib.auth.base_user import BaseUserManager
 
 
 class CustomUserManager(BaseUserManager):
-    def create_user(self, email, password, first_name=None, last_name=None, phone_number=None, **extra_fields):
+    def create_user(self, email, password, **extra_fields):
         if not email:
             raise ValueError('Email field is required!')
         if not password:
             raise ValueError('Password field is required!')
 
         email = self.normalize_email(email)
-        user = self.model(
-            email=email,
-            first_name=first_name,
-            last_name=last_name,
-            phone_number=phone_number,
-            **extra_fields
-        )
 
+        user = self.model(email=email, **extra_fields)
         user.set_password(password)
         user.save()
         return user
