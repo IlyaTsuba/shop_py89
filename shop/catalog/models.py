@@ -1,6 +1,7 @@
 from django.db import models
+from users.models import CustomUser
 
-
+8
 class Category(models.Model):
     name = models.CharField(max_length=20)
     description = models.TextField()
@@ -15,8 +16,8 @@ class Category(models.Model):
 class Discount(models.Model):
     percent = models.IntegerField()
     name = models.CharField(max_length=100)
-    date_start = models.DateTimeField()
-    date_end = models.DateTimeField()
+    date_start = models.DateField()
+    date_end = models.DateField()
 
     def __str__(self):
         return self.name
@@ -25,8 +26,8 @@ class Discount(models.Model):
 class Promocode(models.Model):
     name = models.CharField(max_length=10)
     percent = models.IntegerField()
-    date_start = models.DateTimeField()
-    date_end = models.DateTimeField()
+    date_start = models.DateField()
+    date_end = models.DateField()
     is_cumulative = models.BooleanField()
 
     def __str__(self):
@@ -54,3 +55,9 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Basket(models.Model):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    count = models.IntegerField(null=True, blank=True)
