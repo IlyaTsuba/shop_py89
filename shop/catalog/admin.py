@@ -1,5 +1,5 @@
 from django.contrib import admin
-from catalog.models import Category, Discount, Product, Promocode, Seller
+from catalog.models import Category, Discount, Product, Promocode, Seller, Order, Cashback
 
 
 class ProductAdmin(admin.ModelAdmin):
@@ -13,4 +13,5 @@ admin.site.register(Discount)
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Promocode)
 admin.site.register(Seller)
-
+admin.site.register(Order)
+admin.site.register(Cashback)
