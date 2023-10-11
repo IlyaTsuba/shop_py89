@@ -1,0 +1,16 @@
+[
+{
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+        "name": "sdfdsfsdfs",
+        "price": "100.00",
+        "articul": "sdfds",
+        "description": "dsfsdfsdfsdfsd",
+        "count_on_stock": 3,
+        "discount": 1,
+        "category": 1,
+        "seller": 1
+    }
+}
+]
