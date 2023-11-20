@@ -4,7 +4,6 @@ from users.models import CustomUser
 
 class Category(models.Model):
     name = models.CharField(max_length=20)
-    description = models.TextField()
 
     class Meta:
         verbose_name_plural = 'Categories'
