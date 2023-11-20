@@ -21,3 +21,6 @@ class ActivateUser(UserViewSet):
                           'token': self.kwargs['token']}
 
         return serializer_class(*args, **kwargs)
+
+
+
